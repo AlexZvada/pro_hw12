@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sort(array) {
+            let result = array.reduce((src, el) => {
+                if (!src[el.source]) {
+                    src[el.source] = [];
+                }
+                for (const key in src) {
+                    if (key === el.source) {
+                        src[key].push(el);
+                    }
+                }
+                return src;
+            }, [])
+            return result;
+        }
+        const notification = [
+            {
+                date: '31/07/2019',
+                text: 'Some message here',
+                source: 'facebook'
+            },
+            {
+                date: '20/07/2019',
+                text: 'Some message here',
+                source: 'twitter'
+            },
+            {
+                date: '20/07/2019',
+                text: 'Some message here',
+                source: 'facebook'
+            },
+            {
+                date: '31/07/2019',
+                text: 'Some message here',
+                source: 'twitter'
+            },
+            {
+                date: '11/07/2019',
+                text: 'Some message here',
+                source: 'youtube'
+            },
+            {
+                date: '11/07/2019',
+                text: 'Some message here',
+                source: 'youtube'
+            },
+            {
+                date: '11/07/2019',
+                text: 'Some message here',
+                source: 'viber'
+            },
+            {
+                date: '12/07/2019',
+                text: 'Some message here',
+                source: 'viber'
+            },
+            {
+                date: '11/07/2019',
+                text: 'Some message here',
+                source: 'facebook'
+            },
+            {
+                date: '14/07/2019',
+                text: 'Some message here',
+                source: 'facebook'
+            },
+            {
+                date: '19/07/2019',
+                text: 'Some message here',
+                source: 'facebook'
+            },
+            {
+                date: '9/07/2019',
+                text: 'Some message here',
+                source: 'viber'
+            },
+        ]
+        console.log(sort(notification))
+    </script>
+</body>
+
+</html>
