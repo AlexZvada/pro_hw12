@@ -21,6 +21,20 @@
                     }
                 }
                 return src;
+            }, {})
+            return result;
+        }
+        function enSort(array) {
+            let newArray = [...array];
+            let result = newArray.reduce((acc, el)=>{
+                let src = newArray[0].source;
+                    newArray.map((element, index) => {
+                        if (element.source === src) {
+                            acc.push(element);
+                            newArray.splice(index, 1);
+                        }
+                    });
+                return acc;
             }, [])
             return result;
         }
@@ -87,6 +101,7 @@
             },
         ]
         console.log(sort(notification))
+        console.log(enSort(notification))
     </script>
 </body>
 
